@@ -17,25 +17,26 @@ body{
 }
 .card{
   background:#fff;
-  padding:20px;
-  border-radius:18px;
+  padding:22px;
+  border-radius:20px;
   width:90%;
-  max-width:350px;
+  max-width:360px;
   text-align:center;
-  box-shadow:0 10px 25px rgba(0,0,0,.15);
+  box-shadow:0 12px 30px rgba(0,0,0,.15);
   z-index:2;
 }
-h1,h2{color:#ff4d88;}
-p{color:#555;font-size:14px;}
+h1{color:#ff4d88;}
+h2{color:#ff4d88;margin-bottom:6px;}
+p{color:#555;font-size:15px;margin:6px 0;}
 img{
   width:100%;
-  border-radius:12px;
-  margin:12px 0;
+  border-radius:14px;
+  margin:14px 0;
 }
 button{
-  padding:12px 22px;
+  padding:12px 24px;
   border:none;
-  border-radius:22px;
+  border-radius:24px;
   font-size:15px;
   margin:6px;
   cursor:pointer;
@@ -57,24 +58,29 @@ button{
 
 <body>
 
-<!-- Hindi Romantic Instrumental -->
+<!-- Romantic Music -->
 <audio id="music" loop>
   <source src="https://cdn.pixabay.com/audio/2023/03/06/audio_7c0b8c4f78.mp3" type="audio/mpeg">
 </audio>
 
 <div class="card">
   <h1>❤️ Happy Valentine’s Day ❤️</h1>
-  <h2>My Love</h2>
 
-  <!-- Beautiful couple photo -->
-  <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e" alt="Couple">
+  <h2>Your beautiful wife says 💖</h2>
+  <p>
+    I love you ❤️ <br>
+    Happy Valentine’s Day 💕
+  </p>
+
+  <!-- Cute animated couple -->
+  <img src="https://media.giphy.com/media/l0MYt5jPR6QX5pnqM/giphy.gif" alt="Cute Couple">
 
   <p>Tap to start music 🎶</p>
   <button class="yes" onclick="playMusic()">▶ Start Music</button>
 
-  <h2>Will you be my Valentine? 💕</h2>
+  <h2>Will you be my Valentine? 💞</h2>
 
-  <button class="yes" onclick="alert('Yay! I love you ❤️')">YES</button>
+  <button class="yes" onclick="alert('Forever yours ❤️')">YES</button>
   <button class="no" onclick="moveNo(this)">NO</button>
 </div>
 
@@ -82,10 +88,12 @@ button{
 function playMusic(){
   document.getElementById("music").play();
 }
+
 function moveNo(btn){
   btn.style.position="relative";
   btn.style.left=(Math.random()*100-50)+"px";
 }
+
 setInterval(()=>{
   const h=document.createElement("div");
   h.className="heart";
