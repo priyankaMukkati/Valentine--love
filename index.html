@@ -1,31 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Happy Valentine’s Day ❤️</title>
+  <meta charset="UTF-8">
+  <title>Happy Valentine’s Day ❤️</title>
 
-<style>
-body{
-  margin:0;
-  min-height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  background:linear-gradient(135deg,#ffd6e8,#fff1f7);
-  font-family:Arial,sans-serif;
-  overflow:hidden;
-}
-.card{
-  background:#fff;
-  padding:22px;
-  border-radius:20px;
-  width:90%;
-  max-width:360px;
-  text-align:center;
-  box-shadow:0 12px 30px rgba(0,0,0,.15);
-  z-index:2;
-}
-h1{color:#ff4d88;}
-h2{color:#ff4d88;margin-bottom:6px;}
-p{color:#555;font-size:15px;margin:6px 0;}
-img{
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ffd6e8, #fff1f7);
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    .card {
+      background: #ffffff;
+      padding: 22px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 360px;
+      text-align: center;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+      z-index: 2;
+    }
+
+    h1 {
+      color: #ff4d88;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      color: #ff4d88;
+      margin: 8px 0;
+    }
+
+    p {
+      color: #555;
+      font-size: 15px;
+      margin: 6px 0;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 16px;
+      margin: 14px 0;
+    }
+
+    button {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 24px;
+      font-size: 15px;
+      margin: 6px;
+      cursor: pointer;
+    }
+
+    .yes {
+      background: #ff4d88;
+      color: #fff;
+    }
+
+    .no {
+      background: #ddd;
+    }
+
+    .heart {
+      position: fixed;
+      bottom: 0;
+      font-size: 22px;
+      animation: float 5s linear infinite;
+      pointer-events: none;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); opacity: 1; }
+      100% { transform: translateY(-100vh); opacity: 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Romantic background music -->
+  <audio id="music" loop>
+    <source src="https://cdn.pixabay.com/audio/2023/03/06/audio_7c0b8c4f78.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="card">
+    <h1>❤️ Happy Valentine’s Day ❤️</h1>
+
+    <h2>My dear Vini 💖</h2>
+
+    <p>
+      <b>A little note from your forever ❤️</b><br>
+      I love you so much ❤️<br>
+      Happy Valentine’s Day 💕
+    </p>
+
+    <!-- Cute animation (safe & public) -->
+    <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" alt="Love">
+
+    <p>Tap to start music 🎶</p>
+    <button class="yes" onclick="playMusic()">▶ Start Music</button>
+
+    <h2>Will you be my Valentine forever? 💞</h2>
+
+    <button class="yes" onclick="alert('Forever yours ❤️')">YES</button>
+    <button class="no" onclick="moveNo(this)">NO</button>
+  </div>
+
+  <script>
+    function playMusic() {
+      document.getElementById("music").play();
+    }
+
+    function moveNo(btn) {
+      btn.style.position = "relative";
+      btn.style.left = (Math.random() * 100 - 50) + "px";
+    }
+
+    setInterval(() => {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 5000);
+    }, 500);
+  </script>
+
+</body>
+</html>
